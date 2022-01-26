@@ -31,15 +31,16 @@ IMG_IN=${SUBJECT}_${SESSION}_${TASK}_bold_tshift_volreg
 
 IMG_FMAP=${DERIV_DIR}/${SUBJECT}_${SESSION}
 
-AP_SCAN=${FMAP_DIR}/${SUBJECT}_${SESSION}_acq-task_dir-AP_fmap
-PA_SCAN=${FMAP_DIR}/${SUBJECT}_${SESSION}_acq-task_dir-PA_fmap
+AP_SCAN=${FMAP_DIR}/${SUBJECT}_${SESSION}_rest-AP_fmap
+PA_SCAN=${FMAP_DIR}/${SUBJECT}_${SESSION}_rest-PA_fmap
 
 echo Generating topup file...
 
 # concatenate AP and PA scans, excluding initial volumes with bval of zero
 3dTcat -prefix ${IMG_FMAP}_allb0.nii.gz ${AP_SCAN}.nii.gz'[1..$]' ${PA_SCAN}.nii.gz'[1..$]'
 
-
+# Make sure the fourth column in the acqpars.txt file is set to the total readout
+# time listed in the topup .json file for the scanning protocol
 ACQ_PARS=${PROJECT_DIR}/code/${PIPELINE}/${TASK}_acqpars.txt
 CONFIG=${FSLDIR}/etc/flirtsch/b02b0.cnf
 

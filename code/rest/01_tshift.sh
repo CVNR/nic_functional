@@ -44,5 +44,5 @@ echo Slice times:  ${SLICETIMES}
 
 echo ${SLICETIMES}>${DERIV_DIR}/${IMG_IN}_slicetimes.1D
 
-3dTshift -quintic -prefix ${DERIV_DIR}/${IMG_IN}_tshift.nii.gz -tpattern @${DERIV_DIR}/${IMG_IN}_tshift_slicetimes.1D ${RAW_DIR}/${IMG_IN}.nii.gz
+3dTshift -quintic -prefix ${DERIV_DIR}/${IMG_IN}_tshift.nii.gz -tpattern @${DERIV_DIR}/${IMG_IN}_slicetimes.1D ${RAW_DIR}/${IMG_IN}.nii.gz
 

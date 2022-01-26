@@ -33,10 +33,10 @@ set fmri(sscleanup_yn) 0
 set fmri(outputdir) ""
 
 # TR(s)
-set fmri(tr) 2.000000 
+set fmri(tr) 1.500000
 
 # Total volumes
-set fmri(npts) 126
+set fmri(npts) 350
 
 # Delete volumes
 set fmri(ndelete) 0
@@ -45,7 +45,7 @@ set fmri(ndelete) 0
 set fmri(tagfirst) 1
 
 # Number of first-level analyses
-set fmri(multiple) 4
+set fmri(multiple) 1
 
 # Higher-level input type
 # 1 : Inputs are lower-level FEAT directories
@@ -118,7 +118,7 @@ set fmri(norm_yn) 0
 set fmri(perfsub_yn) 0
 
 # Highpass temporal filtering
-set fmri(temphp_yn) 1
+set fmri(temphp_yn) 0
 
 # Lowpass temporal filtering
 set fmri(templp_yn) 0
@@ -266,38 +266,20 @@ set fmri(regstandard_nonlinear_warpres) 10
 set fmri(paradigm_hp) 100
 
 # Total voxels
-set fmri(totalVoxels) 109771200
+set fmri(totalVoxels) 304920000
 
 
 # Number of lower-level copes feeding into higher-level analysis
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "RUN1"
-
-# 4D AVW data or FEAT directory (2)
-set feat_files(2) "RUN2"
-
-# 4D AVW data or FEAT directory (3)
-set feat_files(3) "RUN3"
-
-# 4D AVW data or FEAT directory (4)
-set feat_files(4) "RUN4"
+set feat_files(1) "RS_BOLD"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
 
 # Subject's structural image for analysis 1
 set highres_files(1) "T1_BRAIN"
-
-# Subject's structural image for analysis 2
-set highres_files(2) "T1_BRAIN"
-
-# Subject's structural image for analysis 3
-set highres_files(3) "T1_BRAIN"
-
-# Subject's structural image for analysis 4
-set highres_files(4) "T1_BRAIN"
 
 # Resampling resolution
 set fmri(regstandard_res) 4
