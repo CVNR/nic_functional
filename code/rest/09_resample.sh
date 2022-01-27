@@ -32,16 +32,13 @@ echo Resampling EPI image to original dimensions...
 # Variables for new dx, dy, dz, resolution values.
 # These values are pulled from 3dinfo of raw BOLD image as acquired.
 
-DXstring=$(3dinfo ${RAW_DIR}/${RAW_BOLD}.nii.gz | grep 'R-to-L')
-DX=${DXstring: `expr $(expr index "${DXstring}" m) - 7`:5}
+DX=$(3dinfo -adi ${RAW_DIR}/${RAW_BOLD}.nii.gz)
 echo DX is ${DX}
 
-DYstring=$(3dinfo ${RAW_DIR}/${RAW_BOLD}.nii.gz | grep 'A-to-P')
-DY=${DYstring: `expr $(expr index "${DYstring}" m) - 7`:5}
+DY=$(3dinfo -adj ${RAW_DIR}/${RAW_BOLD}.nii.gz)
 echo DY is ${DY}
 
-DZstring=$(3dinfo ${RAW_DIR}/${RAW_BOLD}.nii.gz | grep 'I-to-S')
-DZ=${DZstring: `expr $(expr index "${DZstring}" m) - 7`:5}
+DZ=$(3dinfo -adk ${RAW_DIR}/${RAW_BOLD}.nii.gz)
 echo DZ is ${DZ}
 
 

@@ -26,8 +26,8 @@ DERIV_DIR=${PROJECT_DIR}/derivatives/${PIPELINE}/${SUBJECT}/${SESSION}/func
 
 IMG_IN=${SUBJECT}_${SESSION}_${TASK}_bold_tshift
 
-# volume index should NOT be changed between subjects
-ref_vol=100
+# volume index should NOT be changed between subjects (usually the middle volume of the time series)
+ref_vol=175
 BASE=${DERIV_DIR}/${IMG_IN}.nii.gz"[${ref_vol}]"
 
 # motion threshold, past which results in a volume being censored. Should NOT be changed between subjects
@@ -41,7 +41,7 @@ echo Running volume registration and motion correction of ${IMG_IN}.nii.gz
 
 echo Plotting motion parameters from ${IMG_IN}_mpar.1D...
 
-1dplot -plabel head-motion -xlabel '# of Time Steps' -volreg -png ${DERIV_DIR}/${IMG_IN}_mpar.png - ${DERIV_DIR}/${IMG_IN}_mpar.1D
+1dplot -plabel "${SUBJECT} ${SESSION} head motion" -xlabel 'Volume' -volreg -sepscl -png ${DERIV_DIR}/${IMG_IN}_mpar.png - ${DERIV_DIR}/${IMG_IN}_mpar.1D
 
 echo Generating motion censor list of volumes. Review ${IMG_IN}_CENSORTR.txt for list of censored volumes.
 
