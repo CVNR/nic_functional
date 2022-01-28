@@ -153,8 +153,8 @@ This script aligns an input functional image to the subject's previously process
 
 ### References:
 
-[3dTstat](https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dTstat.html)
-[epi_reg](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT/UserGuide#epi_reg)
+[3dTstat](https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dTstat.html)\
+[epi_reg](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT/UserGuide#epi_reg)\
 [applywarp](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FNIRT/UserGuide#Now_what.3F_--_applywarp.21)
 
 
