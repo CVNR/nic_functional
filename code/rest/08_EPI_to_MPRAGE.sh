@@ -38,6 +38,8 @@ echo Running EPI to MPRAGE coregistration on ${IMG_IN}.nii.gz...
 
 3dTstat -mean -prefix ${DERIV_DIR}/${IMG_IN}_mean.nii.gz ${DERIV_DIR}/${IMG_IN}.nii.gz
 
-epi_reg --epi=${DERIV_DIR}/${IMG_IN}_mean.nii.gz --t1=${ANAT_DIR}/${IMG_T1}.nii --t1brain=${ANAT_DIR}/${IMG_T1}_brain_restore.nii.gz --wmseg=${ANAT_DIR}/${IMG_T1}_brain_restore-WM.nii.gz --out=${DERIV_DIR}/${IMG_IN}_MPRAGE
+epi_reg --epi=${DERIV_DIR}/${IMG_IN}_mean.nii.gz --t1=${ANAT_DIR}/${IMG_T1}.nii --t1brain=${ANAT_DIR}/${IMG_T1}_brain_restore.nii.gz --wmseg=${ANAT_DIR}/${IMG_T1}_brain_restore-WM.nii.gz --out=${DERIV_DIR}/${IMG_IN}_mean_MPRAGE
+
+applywarp --interp=spline -i ${DERIV_DIR}/${IMG_IN}.nii.gz -r ${ANAT_DIR}/${IMG_T1}_brain_restore.nii.gz --premat=${DERIV_DIR}/${IMG_IN}_mean_MPRAGE.mat -o ${DERIV_DIR}/${IMG_IN}_MPRAGE
 
 ln -s ${ANAT_DIR}/${IMG_T1}_brain_restore.nii.gz ${DERIV_DIR}/${IMG_T1}_brain_restore.nii.gz
