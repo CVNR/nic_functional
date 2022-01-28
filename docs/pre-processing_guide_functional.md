@@ -187,6 +187,6 @@ This script utilizes the `3dBlurInMask` tool on an input functional image to rep
 
 ### References:
 
-[Why Smooth?](https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/Preprocessing/Smoothing.html)
+[Why Smooth?](https://andysbrainbook.readthedocs.io/en/latest/fMRI_Short_Course/Preprocessing/Smoothing.html)\
 [3dBlurInMask](https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dBlurInMask.html)
 
