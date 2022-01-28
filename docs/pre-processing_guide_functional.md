@@ -149,6 +149,8 @@ cd /data/qb/Atlanta/projects/<projectID>/code/<pipeline>/
 ./08_EPI_to_MPRAGE.sh
 ```
 
+To check the output of this script, overlay the processed anatomical image (...\_brain\_restore.nii.gz) onto the output functional image in either AFNI or FSLeyes. Visually inspect the images to make sure they align.
+
 ### What this script does:
 
 This script aligns an input functional image to the subject's previously processed anatomical image. First, the `3dTstat` tool is used to take the mean of an input functional image.  This mean functional image is then registered to a previously processed structual brain image via the `epi_reg` tool. The resulting registration matrix is then applied to the original input functional image using the `applywarp` tool.
